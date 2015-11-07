@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa6e12b5-6c83-44f7-9564-88afbb2db39a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Timer.java" afterPath="$PROJECT_DIR$/src/main/java/Timer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Ui.java" afterPath="$PROJECT_DIR$/src/main/java/Ui.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -30,38 +31,38 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
               <folding>
                 <element signature="e#104#105#0" expanded="true" />
-                <element signature="e#150#151#0" expanded="true" />
+                <element signature="e#147#148#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Timer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Timer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Timer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.5481928">
+              <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
               <folding>
-                <element signature="e#252#253#0" expanded="true" />
-                <element signature="e#289#290#0" expanded="true" />
-                <element signature="e#976#977#0" expanded="true" />
+                <element signature="e#332#333#0" expanded="true" />
+                <element signature="e#364#365#0" expanded="true" />
+                <element signature="e#979#980#0" expanded="true" />
                 <element signature="e#1015#1016#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ui.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Ui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12650603">
-              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
               <folding>
-                <element signature="e#1123#1124#0" expanded="true" />
-                <element signature="e#1161#1162#0" expanded="true" />
+                <element signature="e#1707#1708#0" expanded="true" />
+                <element signature="e#1745#1746#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,6 +93,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/Ui.java" />
         <option value="$PROJECT_DIR$/src/main/java/Timer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
       </list>
     </option>
   </component>
@@ -409,7 +411,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446883386349</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="at least works">
+      <created>1446883820469</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1446883820469</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -446,7 +454,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="removed fukken gradle" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed fukken gradle" />
+    <MESSAGE value="at least works" />
+    <option name="LAST_COMMIT_MESSAGE" value="at least works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -465,15 +474,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Timer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Ui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
           <folding>
-            <element signature="e#252#253#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#976#977#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#1707#1708#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -481,21 +488,23 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding>
             <element signature="e#104#105#0" expanded="true" />
-            <element signature="e#150#151#0" expanded="true" />
+            <element signature="e#147#148#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Ui.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Timer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12650603">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.5481928">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
           <folding>
-            <element signature="e#1123#1124#0" expanded="true" />
-            <element signature="e#1161#1162#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+            <element signature="e#1015#1016#0" expanded="true" />
           </folding>
         </state>
       </provider>

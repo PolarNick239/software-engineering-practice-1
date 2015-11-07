@@ -9,9 +9,11 @@ public class Timer {
     private static Thread timerThread;
 
     public static final int SECOND = 1000;
+    public static volatile boolean timerRunning;
+    public static int curTime;
 
     public Timer(int i) {
-        this.beginTimeSec = i;
+        this.curTime = i;
     }
 
     /**
@@ -20,16 +22,17 @@ public class Timer {
      * @param callback
      */
     public static void start(final Consumer<Integer> callback) {
+        timerRunning = true;
         timerThread = new Thread(() -> {
 
-            beginTimeSec = (int) System.currentTimeMillis() / 1000;
-            while (!timerThread.isInterrupted()) {
-                callback.accept((int) System.currentTimeMillis() / 1000 - beginTimeSec);
+            while (timerRunning) {
+                callback.accept(curTime);
                 try {
                     Thread.sleep(SECOND);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                curTime += 1;
             }
         });
         timerThread.start();
@@ -39,6 +42,6 @@ public class Timer {
      * stops timer.
      */
     public static void stop() {
-        timerThread.interrupt();
+        timerRunning = false;
     }
 }

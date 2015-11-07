@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Created by igushs on 11/7/15.
@@ -30,11 +33,21 @@ public class Ui {
 
         startButton.addActionListener((actionEvent) -> {
             timer.start((i) -> {
+                try (PrintWriter printWriter = new PrintWriter(new FileWriter("storage.txt"))) {
+                    printWriter.println(System.currentTimeMillis() - (i * 1000));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 timeLabel.setText(String.valueOf(i));
             });
         });
 
         stopButton.addActionListener((actionEvent) -> {
+            try (PrintWriter printWriter = new PrintWriter(new FileWriter("storage.txt"))) {
+                printWriter.println();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             timer.stop();
         });
     }
