@@ -29,11 +29,13 @@ public class Timer {
             if (s == null) {
                 curTime = 0;
             } else {
-                if (s.startsWith("stop")) {
-                    curTime = Integer.parseInt(s.substring(4));
-                } else {
+                if (s.startsWith("pause")) {
+                    curTime = Integer.parseInt(s.substring("pause".length()));
+                } else if (s.startsWith("start")) {
                     curTime = (int) ((System.currentTimeMillis() - Long.parseLong(s.substring(5))) / 1000);
                     start();
+                } else {
+
                 }
             }
         } catch (FileNotFoundException e) {
@@ -70,9 +72,20 @@ public class Timer {
     }
 
     /**
-     * stops timer.
+     * pauses Timer.
+     */
+    public static void pause() {
+        timerRunning = false;
+    }
+
+    /**
+     * stops Timer.
      */
     public static void stop() {
         timerRunning = false;
+        curTime = 0;
+        if (Timer.callback != null) {
+            Timer.callback.accept(curTime);
+        }
     }
 }

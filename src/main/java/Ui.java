@@ -15,6 +15,7 @@ public class Ui {
     private final JLabel timeLabel = new JLabel("00:00:00");
     private final JButton startButton = new JButton("Start");
     private final JButton pauseButton = new JButton("Pause");
+    private final JButton stopButton = new JButton("Stop");
 
     private final Timer timer;
 
@@ -37,6 +38,7 @@ public class Ui {
 
         frame.add(startButton);
         frame.add(pauseButton);
+        frame.add(stopButton);
         frame.add(timeLabel);
 
         startButton.addActionListener((actionEvent) -> {
@@ -44,13 +46,21 @@ public class Ui {
         });
 
         pauseButton.addActionListener((actionEvent) -> {
+            Timer.pause();
+            try (PrintWriter printWriter = new PrintWriter(new FileWriter("storage.txt"))) {
+                printWriter.println("pause" + timer.curTime);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        stopButton.addActionListener((actionEvent) -> {
+            Timer.stop();
             try (PrintWriter printWriter = new PrintWriter(new FileWriter("storage.txt"))) {
                 printWriter.println("stop" + timer.curTime);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-            Timer.stop();
         });
     }
 
