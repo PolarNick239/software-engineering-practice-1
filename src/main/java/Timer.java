@@ -20,17 +20,15 @@ public class Timer {
      * @param callback
      */
     public static void start(final Consumer<Integer> callback) {
-        timerThread = new Thread(new Runnable() {
-            public void run() {
+        timerThread = new Thread(() -> {
 
-                beginTimeSec = (int) System.currentTimeMillis() / 1000;
-                while (!timerThread.isInterrupted()) {
-                    callback.accept((int) System.currentTimeMillis() / 1000 - beginTimeSec);
-                    try {
-                        Thread.sleep(SECOND);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+            beginTimeSec = (int) System.currentTimeMillis() / 1000;
+            while (!timerThread.isInterrupted()) {
+                callback.accept((int) System.currentTimeMillis() / 1000 - beginTimeSec);
+                try {
+                    Thread.sleep(SECOND);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         });

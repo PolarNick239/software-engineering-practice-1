@@ -28,10 +28,10 @@ public class Ui {
         frame.add(stopButton);
         frame.add(timeLabel);
 
-        timer.stop();
-
         startButton.addActionListener((actionEvent) -> {
-            timer.start();
+            timer.start((i) -> {
+                timeLabel.setText(String.valueOf(i));
+            });
         });
 
         stopButton.addActionListener((actionEvent) -> {
