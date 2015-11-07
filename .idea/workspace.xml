@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa6e12b5-6c83-44f7-9564-88afbb2db39a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Timer.java" afterPath="$PROJECT_DIR$/src/main/java/Timer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Ui.java" afterPath="$PROJECT_DIR$/src/main/java/Ui.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="software-engineering-practice-1.iws" />
@@ -433,7 +430,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446884681659</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Transfer 2">
+      <created>1446885270848</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1446885270848</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -473,7 +476,8 @@
     <MESSAGE value="removed fukken gradle" />
     <MESSAGE value="at least works" />
     <MESSAGE value="now it works correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="now it works correctly" />
+    <MESSAGE value="Transfer 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Transfer 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
