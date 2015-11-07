@@ -3,6 +3,6 @@
  */
 public class Main {
     public static void main(String[] args) {
-        new Ui(new Timer(0)).show();
+        new Ui(new Timer()).show();
     }
 }

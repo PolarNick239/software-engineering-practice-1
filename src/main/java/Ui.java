@@ -34,7 +34,7 @@ public class Ui {
         startButton.addActionListener((actionEvent) -> {
             timer.start((i) -> {
                 try (PrintWriter printWriter = new PrintWriter(new FileWriter("storage.txt"))) {
-                    printWriter.println(System.currentTimeMillis() - (i * 1000));
+                    printWriter.println("start" + (System.currentTimeMillis() - (i * 1000)));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -44,10 +44,11 @@ public class Ui {
 
         stopButton.addActionListener((actionEvent) -> {
             try (PrintWriter printWriter = new PrintWriter(new FileWriter("storage.txt"))) {
-                printWriter.println();
+                printWriter.println("stop" + timer.curTime);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             timer.stop();
         });
     }

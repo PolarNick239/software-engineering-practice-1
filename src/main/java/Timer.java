@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
 import java.util.function.Consumer;
 
 /**
@@ -12,8 +15,27 @@ public class Timer {
     public static volatile boolean timerRunning;
     public static int curTime;
 
-    public Timer(int i) {
-        this.curTime = i;
+    public Timer() {
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(new FileReader("storage.txt"));
+            String s = null;
+            while (scanner.hasNext()) {
+                s = scanner.nextLine();
+            }
+            if (s == null) {
+                curTime = 0;
+            } else {
+                if (s.startsWith("stop")) {
+                    curTime = Integer.parseInt(s.substring(4));
+                } else {
+                    curTime = (int) ((System.currentTimeMillis() - Long.parseLong(s.substring(5))) / 1000);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            curTime = 0;
+        }
+
     }
 
     /**
