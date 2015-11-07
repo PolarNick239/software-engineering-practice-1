@@ -9,7 +9,11 @@ public class Timer {
     private static Thread timerThread;
 
     public static final int SECOND = 1000;
-    
+
+    /**
+     * starts timer.
+     * @param callback
+     */
     public static void start(final Consumer<Integer> callback) {
         timerThread = new Thread(new Runnable() {
             public void run() {
@@ -28,6 +32,9 @@ public class Timer {
         timerThread.start();
     }
 
+    /**
+     * stops timer.
+     */
     public static void stop() {
         timerThread.interrupt();
     }
