@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.sql.Time;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
@@ -32,6 +33,7 @@ public class Timer {
                     curTime = Integer.parseInt(s.substring(4));
                 } else {
                     curTime = (int) ((System.currentTimeMillis() - Long.parseLong(s.substring(5))) / 1000);
+                    start();
                 }
             }
         } catch (FileNotFoundException e) {
@@ -53,7 +55,9 @@ public class Timer {
         timerThread = new Thread(() -> {
 
             while (timerRunning) {
-                Timer.callback.accept(curTime);
+                if (Timer.callback != null) {
+                    Timer.callback.accept(curTime);
+                }
                 try {
                     Thread.sleep(SECOND);
                 } catch (InterruptedException e) {
