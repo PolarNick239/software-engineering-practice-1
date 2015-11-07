@@ -10,8 +10,13 @@ public class Timer {
 
     public static final int SECOND = 1000;
 
+    public Timer(int i) {
+        this.beginTimeSec = i;
+    }
+
     /**
      * starts timer.
+     *
      * @param callback
      */
     public static void start(final Consumer<Integer> callback) {
