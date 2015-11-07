@@ -6,27 +6,29 @@ import java.util.function.Consumer;
 public class Timer {
 
     private static int beginTimeSec;
-    private static Thread t;
+    private static Thread timerThread;
 
-    public static void start(final Consumer<Integer> consumer) {
-        t = new Thread(new Runnable() {
+    public static final int SECOND = 1000;
+    
+    public static void start(final Consumer<Integer> callback) {
+        timerThread = new Thread(new Runnable() {
             public void run() {
 
                 beginTimeSec = (int) System.currentTimeMillis() / 1000;
-                while (!t.isInterrupted()) {
-                    consumer.accept((int) System.currentTimeMillis() / 1000 - beginTimeSec);
+                while (!timerThread.isInterrupted()) {
+                    callback.accept((int) System.currentTimeMillis() / 1000 - beginTimeSec);
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(SECOND);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
             }
         });
-        t.start();
+        timerThread.start();
     }
 
     public static void stop() {
-        t.interrupt();
+        timerThread.interrupt();
     }
 }
