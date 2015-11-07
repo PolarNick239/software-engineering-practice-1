@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.function.Consumer;
 
 /**
- * Created by viacheslav on 07.11.2015.
+ * Created by static viacheslav on 07.11.2015.
  */
 public class Timer {
 
@@ -14,6 +14,8 @@ public class Timer {
     public static final int SECOND = 1000;
     public static volatile boolean timerRunning;
     public static int curTime;
+
+    private static Consumer<Integer> callback;
 
     public Timer() {
         Scanner scanner = null;
@@ -38,17 +40,20 @@ public class Timer {
 
     }
 
+    public static void setCALLBACK(Consumer<Integer> callback) {
+        Timer.callback = callback;
+    }
+
     /**
      * starts timer.
      *
-     * @param callback
      */
-    public static void start(final Consumer<Integer> callback) {
+    public static void start() {
         timerRunning = true;
         timerThread = new Thread(() -> {
 
             while (timerRunning) {
-                callback.accept(curTime);
+                Timer.callback.accept(curTime);
                 try {
                     Thread.sleep(SECOND);
                 } catch (InterruptedException e) {

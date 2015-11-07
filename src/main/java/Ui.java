@@ -20,6 +20,14 @@ public class Ui {
 
     public Ui(Timer timer) {
         this.timer = timer;
+        Timer.setCALLBACK((i) -> {
+            try (PrintWriter printWriter = new PrintWriter(new FileWriter("storage.txt"))) {
+                printWriter.println("start" + (System.currentTimeMillis() - (i * 1000)));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            timeLabel.setText(String.valueOf(i));
+        });
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setMinimumSize(new Dimension(300, 100));
@@ -32,14 +40,7 @@ public class Ui {
         frame.add(timeLabel);
 
         startButton.addActionListener((actionEvent) -> {
-            timer.start((i) -> {
-                try (PrintWriter printWriter = new PrintWriter(new FileWriter("storage.txt"))) {
-                    printWriter.println("start" + (System.currentTimeMillis() - (i * 1000)));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                timeLabel.setText(String.valueOf(i));
-            });
+            Timer.start();
         });
 
         stopButton.addActionListener((actionEvent) -> {
@@ -49,7 +50,7 @@ public class Ui {
                 e.printStackTrace();
             }
 
-            timer.stop();
+            Timer.stop();
         });
     }
 
